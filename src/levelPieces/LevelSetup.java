@@ -38,6 +38,7 @@ public class LevelSetup {
 	}
 	
 	public void createLevel(int levelNum) {
+		//TODO add level setups
 		if(levelNum == 1) {
 			
 		}else if(levelNum == 2) {
