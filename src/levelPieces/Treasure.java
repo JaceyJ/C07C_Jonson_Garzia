@@ -7,7 +7,6 @@ public class Treasure extends GamePiece{
 
 	public Treasure(int location) {
 		super('X', "Treasure - (Get two to advance)", location);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
