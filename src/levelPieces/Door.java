@@ -5,6 +5,7 @@ import gameEngine.Drawable;
 /*
  * Class: Door
  * Purpose: draws a door on the game board. Door does nothing.
+ * Authors Gavin Garzia and Jacey Jonson
  */
 public class Door implements Drawable{
 	private String label;

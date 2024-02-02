@@ -8,6 +8,8 @@ import gameEngine.Moveable;
 
 /*
  * Class: LevelSetup
+ * Purpose: set up board and create lists of moving pieces and intereacting pieces
+ * Authors: Jacey Jonson and Gavin Garzias
  */
 public class LevelSetup {
 	private int playerStartLoc;
