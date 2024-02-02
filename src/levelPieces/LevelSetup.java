@@ -1,3 +1,7 @@
+package levelPieces;
+
+import java.util.ArrayList;
+import gameEngine.Drawable;
 import gameEngine.GameEngine;
 import gameEngine.Moveable;
 
