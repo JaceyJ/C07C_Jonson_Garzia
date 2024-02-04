@@ -39,11 +39,67 @@ public class LevelSetup {
 	}
 	
 	public void createLevel(int levelNum) {
-		//TODO add level setups
+		//Level One Pieces: Door, Goblin, Guard, Treasure, Magic Carpet
+		//Level Two Pieces: Door, Goblin, Archer, Thornbush, Treasure, Magic Carpet
 		if(levelNum == 1) {
+		
+		//Add Door
+		Door newDoor = new Door();
+		board[19] = newDoor;
+	
+		//Add Goblin
+		Goblin newGoblin = new Goblin('G', "Goblin", 5);
+		movingPieces.add(newGoblin);
+		board[newGoblin.getLocation()] = newGoblin;
+		
+		//Add Guard
+		Guard newGuard = new Guard(15);
+		movingPieces.add(newGuard);
+		interactingPieces.add(newGuard);
+		board[newGuard.getLocation()] = newGuard;
+		
+		//Add Treasure 
+		Treasure newTreasure = new Treasure(14);
+		interactingPieces.add(newTreasure);
+		board[newTreasure.getLocation()] = newTreasure;
+		
+		//Add Magic Carpet
+		MagicCarpet newMagicCarpet = new MagicCarpet('M', "Magic Carpet", 17);
+		interactingPieces.add(newMagicCarpet);
+		board[newMagicCarpet.getLocation()] = newMagicCarpet;
+		
+		} else if (levelNum  == 2) {
+			//Add Door
+			Door newDoor = new Door();
+			board[2] = newDoor;
+		
+			//Add Goblin
+			Goblin newGoblin = new Goblin('G', "Goblin", 10);
+			movingPieces.add(newGoblin);
+			board[newGoblin.getLocation()] = newGoblin;
 			
-		}else if(levelNum == 2) {
+			//Add Archer
+			Archer newArcher = new Archer ('A', "Archer", 8);
+			interactingPieces.add(newArcher);
+			movingPieces.add(newArcher);
+			board[newArcher.getLocation()] = newArcher;
 			
+			//Add Thornbush
+			ThornBush newThornbush = new ThornBush(3);
+			interactingPieces.add(newThornbush);
+			board[newThornbush.getLocation()] = newThornbush;
+			
+			//Add Treasure 
+			Treasure newTreasure = new Treasure(14);
+			interactingPieces.add(newTreasure);
+			board[newTreasure.getLocation()] = newTreasure;
+			
+			//Add Magic Carpet
+			MagicCarpet newMagicCarpet = new MagicCarpet('M', "Magic Carpet", 18);
+			interactingPieces.add(newMagicCarpet);
+			board[newMagicCarpet.getLocation()] = newMagicCarpet;
+			
+
 		}
 	}
 }

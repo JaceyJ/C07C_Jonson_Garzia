@@ -3,17 +3,19 @@ package levelPieces;
 import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 
-public class Ostrich extends RandomMotionPiece {
+public class MagicCarpet extends RandomMotionPiece {
 
-	public Ostrich(char symbol, String label, int location) {
+	public MagicCarpet(char symbol, String label, int location) {
 		super(symbol, label, location);
 		// TODO Auto-generated constructor stub
 	}
-//Replicates Unicorn Piece
 
+	
 	@Override
 	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
-		// TODO Auto-generated method stub
-		return null;
+		if(playerLocation == super.getLocation()) {
+			return InteractionResult.ADVANCE;
+		}
+		return InteractionResult.NONE;
 	}
 }

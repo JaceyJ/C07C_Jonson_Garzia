@@ -13,7 +13,7 @@ public class Guard extends GamePiece implements Moveable{
 	private boolean lastMoveLeft;
 	
 	public Guard(int location) {
-		super('G', "Guard - (wants to kill you)", location);
+		super('R', "Guard - (wants to kill you)", location);
 		lastMoveLeft = false;
 	}
 
@@ -23,15 +23,13 @@ public class Guard extends GamePiece implements Moveable{
 	 */
 	@Override
 	public void move(Drawable[] gameBoard, int playerLocation) {
+		gameBoard[super.getLocation()] = null;
 		if(lastMoveLeft && super.getLocation() < gameBoard.length && gameBoard[super.getLocation()+1] == null) {
-			gameBoard[super.getLocation()+1] = this;
-			gameBoard[super.getLocation()] = null;
 			super.setLocation(super.getLocation()+1);
-			
+			gameBoard[super.getLocation()] = this;
 		}else if(!lastMoveLeft && super.getLocation() >= 0 && gameBoard[super.getLocation()-1] == null){
+			super.setLocation(super.getLocation()-1);
 			gameBoard[super.getLocation()-1] = this;
-			gameBoard[super.getLocation()] = null;
-			super.setLocation(super.getLocation()+1);
 		}
 	}
 
