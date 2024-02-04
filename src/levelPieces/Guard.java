@@ -11,6 +11,7 @@ import gameEngine.Moveable;
  */
 public class Guard extends GamePiece implements Moveable{
 	private boolean lastMoveLeft;
+	
 	public Guard(int location) {
 		super('G', "Guard - (wants to kill you)", location);
 		lastMoveLeft = false;
