@@ -39,20 +39,35 @@ public class LevelSetup {
 	}
 	
 	public void createLevel(int levelNum) {
-		//Add Archer
-		Archer newArcher = new Archer ('A', "Archer", 8);
-		interactingPieces.add(newArcher);
-		movingPieces.add(newArcher);
-		board[newArcher.getLocation()] = newArcher;
+		//Level One Pieces: Door, Goblin
+		//Level Two Pieces: Door, Goblin, Archer
+		if(levelNum == 1) {
+		
+		//Add Door
+		Door newDoor = new Door();
+		board[19] = newDoor;
 	
 		//Add Goblin
 		Goblin newGoblin = new Goblin('G', "Goblin", 5);
 		movingPieces.add(newGoblin);
 		board[newGoblin.getLocation()] = newGoblin;
-		if(levelNum == 1) {
+		
+		} else if (levelNum  == 2) {
+			//Add Door
+			Door newDoor = new Door();
+			board[2] = newDoor;
+		
+			//Add Goblin
+			Goblin newGoblin = new Goblin('G', "Goblin", 10);
+			movingPieces.add(newGoblin);
+			board[newGoblin.getLocation()] = newGoblin;
 			
-		}else if(levelNum == 2) {
-			
+			//Add Archer
+			Archer newArcher = new Archer ('A', "Archer", 8);
+			interactingPieces.add(newArcher);
+			movingPieces.add(newArcher);
+			board[newArcher.getLocation()] = newArcher;
+
 		}
 	}
 }

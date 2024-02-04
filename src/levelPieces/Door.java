@@ -19,7 +19,7 @@ public class Door implements Drawable{
 
 	@Override
 	public void draw() {
-		System.out.println(symbol);
+		System.out.print(symbol);
 	}
 	
 	@Override
