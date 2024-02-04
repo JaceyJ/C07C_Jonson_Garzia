@@ -39,8 +39,8 @@ public class LevelSetup {
 	}
 	
 	public void createLevel(int levelNum) {
-		//Level One Pieces: Door, Goblin
-		//Level Two Pieces: Door, Goblin, Archer
+		//Level One Pieces: Door, Goblin, Guard, Treasure, Magic Carpet
+		//Level Two Pieces: Door, Goblin, Archer, Thornbush, Treasure, Magic Carpet
 		if(levelNum == 1) {
 		
 		//Add Door
@@ -51,6 +51,22 @@ public class LevelSetup {
 		Goblin newGoblin = new Goblin('G', "Goblin", 5);
 		movingPieces.add(newGoblin);
 		board[newGoblin.getLocation()] = newGoblin;
+		
+		//Add Guard
+		Guard newGuard = new Guard(15);
+		movingPieces.add(newGuard);
+		interactingPieces.add(newGuard);
+		board[newGuard.getLocation()] = newGuard;
+		
+		//Add Treasure 
+		Treasure newTreasure = new Treasure(14);
+		interactingPieces.add(newTreasure);
+		board[newTreasure.getLocation()] = newTreasure;
+		
+		//Add Magic Carpet
+		MagicCarpet newMagicCarpet = new MagicCarpet('M', "Magic Carpet", 17);
+		interactingPieces.add(newMagicCarpet);
+		board[newMagicCarpet.getLocation()] = newMagicCarpet;
 		
 		} else if (levelNum  == 2) {
 			//Add Door
@@ -67,6 +83,22 @@ public class LevelSetup {
 			interactingPieces.add(newArcher);
 			movingPieces.add(newArcher);
 			board[newArcher.getLocation()] = newArcher;
+			
+			//Add Thornbush
+			ThornBush newThornbush = new ThornBush(3);
+			interactingPieces.add(newThornbush);
+			board[newThornbush.getLocation()] = newThornbush;
+			
+			//Add Treasure 
+			Treasure newTreasure = new Treasure(14);
+			interactingPieces.add(newTreasure);
+			board[newTreasure.getLocation()] = newTreasure;
+			
+			//Add Magic Carpet
+			MagicCarpet newMagicCarpet = new MagicCarpet('M', "Magic Carpet", 18);
+			interactingPieces.add(newMagicCarpet);
+			board[newMagicCarpet.getLocation()] = newMagicCarpet;
+			
 
 		}
 	}
