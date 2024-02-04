@@ -40,6 +40,9 @@ public class LevelSetup {
 	
 	public void createLevel(int levelNum) {
 		//TODO add level setups
+		Goblin newGoblin = new Goblin('G', "Goblin", 5);
+		movingPieces.add(newGoblin);
+		board[5] = newGoblin;
 		if(levelNum == 1) {
 			
 		}else if(levelNum == 2) {
