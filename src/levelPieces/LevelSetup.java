@@ -39,10 +39,16 @@ public class LevelSetup {
 	}
 	
 	public void createLevel(int levelNum) {
-		//TODO add level setups
+		//Add Archer
+		Archer newArcher = new Archer ('A', "Archer", 8);
+		interactingPieces.add(newArcher);
+		movingPieces.add(newArcher);
+		board[newArcher.getLocation()] = newArcher;
+	
+		//Add Goblin
 		Goblin newGoblin = new Goblin('G', "Goblin", 5);
 		movingPieces.add(newGoblin);
-		board[5] = newGoblin;
+		board[newGoblin.getLocation()] = newGoblin;
 		if(levelNum == 1) {
 			
 		}else if(levelNum == 2) {
