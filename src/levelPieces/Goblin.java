@@ -11,7 +11,7 @@ public class Goblin extends GamePiece implements Moveable {
 	public Goblin(char symbol, String label, int location) {
 		super(symbol, label, location);
 		dir = -1; //starts the goblin moving left
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
