@@ -54,7 +54,7 @@ public class LevelSetup {
 		board[19] = newDoor;
 	
 		//Add Goblin
-		Goblin newGoblin = new Goblin('G', "Goblin", 5);
+		Goblin newGoblin = new Goblin('G', "Goblin - (Jumps around, causes no harm)", 5);
 		movingPieces.add(newGoblin);
 		board[newGoblin.getLocation()] = newGoblin;
 		
@@ -70,7 +70,7 @@ public class LevelSetup {
 		board[newTreasure.getLocation()] = newTreasure;
 		
 		//Add Magic Carpet
-		MagicCarpet newMagicCarpet = new MagicCarpet('M', "Magic Carpet", 18);
+		MagicCarpet newMagicCarpet = new MagicCarpet('M', "Magic Carpet - (Transports you to next level)", 18);
 		interactingPieces.add(newMagicCarpet);
 		board[newMagicCarpet.getLocation()] = newMagicCarpet;
 		
@@ -80,12 +80,12 @@ public class LevelSetup {
 			board[2] = newDoor;
 		
 			//Add Goblin
-			Goblin newGoblin = new Goblin('G', "Goblin", 10);
+			Goblin newGoblin = new Goblin('G', "Goblin - (Jumps around, causes no harm", 10);
 			movingPieces.add(newGoblin);
 			board[newGoblin.getLocation()] = newGoblin;
 			
 			//Add Archer
-			Archer newArcher = new Archer ('A', "Archer", 8);
+			Archer newArcher = new Archer ('A', "Archer - (Randomly shoots, watch out)", 8);
 			interactingPieces.add(newArcher);
 			movingPieces.add(newArcher);
 			board[newArcher.getLocation()] = newArcher;
@@ -101,7 +101,7 @@ public class LevelSetup {
 			board[newTreasure.getLocation()] = newTreasure;
 			
 			//Add Magic Carpet
-			MagicCarpet newMagicCarpet = new MagicCarpet('M', "Magic Carpet", 18);
+			MagicCarpet newMagicCarpet = new MagicCarpet('M', "Magic Carpet - (Transports you to next level)", 18);
 			interactingPieces.add(newMagicCarpet);
 			board[newMagicCarpet.getLocation()] = newMagicCarpet;
 			
