@@ -5,10 +5,16 @@ import gameEngine.Drawable;
 import gameEngine.GameEngine;
 import gameEngine.Moveable;
 
-/*
- * Class: LevelSetup
- * Purpose: set up board and create lists of moving pieces and intereacting pieces
- * Authors: Jacey Jonson and Gavin Garzias
+/* Class: LevelSetup
+ * Purpose: used to set up the pieces for each level
+ * Responsibilities: This class has various getter and setter. Also, this class contains
+ * the createLevel method which sets up the gameboard based on the current level the player
+ * is on by creating objects for the needed pieces, putting them in the corresponding interaction
+ * or movement lists, and adding these objects to the gameboard
+ * Authors: Jacey Jonson and Gavin Garzia
+ * Date: 2/1/24
+ * Collaborators: n/a
+ * Sources: n/a
  */
 public class LevelSetup {
 	private int playerStartLoc;
@@ -48,7 +54,7 @@ public class LevelSetup {
 		board[19] = newDoor;
 	
 		//Add Goblin
-		Goblin newGoblin = new Goblin('G', "Goblin", 5);
+		Goblin newGoblin = new Goblin('G', "Goblin - (Jumps around, causes no harm)", 5);
 		movingPieces.add(newGoblin);
 		board[newGoblin.getLocation()] = newGoblin;
 		
@@ -59,12 +65,12 @@ public class LevelSetup {
 		board[newGuard.getLocation()] = newGuard;
 		
 		//Add Treasure 
-		Treasure newTreasure = new Treasure(14);
+		Treasure newTreasure = new Treasure(12);
 		interactingPieces.add(newTreasure);
 		board[newTreasure.getLocation()] = newTreasure;
 		
 		//Add Magic Carpet
-		MagicCarpet newMagicCarpet = new MagicCarpet('M', "Magic Carpet", 17);
+		MagicCarpet newMagicCarpet = new MagicCarpet('M', "Magic Carpet - (Transports you to next level)", 18);
 		interactingPieces.add(newMagicCarpet);
 		board[newMagicCarpet.getLocation()] = newMagicCarpet;
 		
@@ -74,12 +80,12 @@ public class LevelSetup {
 			board[2] = newDoor;
 		
 			//Add Goblin
-			Goblin newGoblin = new Goblin('G', "Goblin", 10);
+			Goblin newGoblin = new Goblin('G', "Goblin - (Jumps around, causes no harm", 10);
 			movingPieces.add(newGoblin);
 			board[newGoblin.getLocation()] = newGoblin;
 			
 			//Add Archer
-			Archer newArcher = new Archer ('A', "Archer", 8);
+			Archer newArcher = new Archer ('A', "Archer - (Randomly shoots, watch out)", 8);
 			interactingPieces.add(newArcher);
 			movingPieces.add(newArcher);
 			board[newArcher.getLocation()] = newArcher;
@@ -95,7 +101,7 @@ public class LevelSetup {
 			board[newTreasure.getLocation()] = newTreasure;
 			
 			//Add Magic Carpet
-			MagicCarpet newMagicCarpet = new MagicCarpet('M', "Magic Carpet", 18);
+			MagicCarpet newMagicCarpet = new MagicCarpet('M', "Magic Carpet - (Transports you to next level)", 18);
 			interactingPieces.add(newMagicCarpet);
 			board[newMagicCarpet.getLocation()] = newMagicCarpet;
 			
