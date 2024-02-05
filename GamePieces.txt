@@ -1,0 +1,26 @@
+Jacey Jonson and Gavin Garzia
+Section B
+
+Requirements:
+- 5 Pieces that Interact:
+	* Archer -- will shoot an arrow randomly in a random direction. If this arrow is in
+				range of the player, it will cause a hit, if not, do nothing
+	* Guard -- will kill the player if within one space of it. If not in vicinity, do nothing
+	* Magic Carpet -- if the player occupies the same space, will cause ADVANCE interaction. If
+					  not in vicinity, do nothing
+	* ThornBush -- will hit the player if the player occupies the same space. If not in 
+				   vicinity, do nothing
+	* Treasure -- will give the player a point if the player occupies the same space or an
+				  adjacent space. If not in vicinity, do nothing
+	* The five pieces listed account for every interaction result. Pieces ThornBush, Treasure
+	  and MagicCarpet do not move while Archer and Guard do. Archer interacts at a distance
+	  
+- 2 Different Move Algorithms:
+	* Archer -- moves randomly within the bounds of the board
+	* Guard -- patrols within 2 spaces of its original location
+	* The two pieces listed have two different move algorithms and the Archer piece involves
+	random movement
+
+- 1 Drawable Piece:
+	* Door -- not a gamepiece and does not implement Moveable. This piece exists on the board
+	without doing anything.
