@@ -19,7 +19,8 @@ public class Archer extends GamePiece implements Moveable {
 		//determine the direction
 		InteractionResult result = InteractionResult.NONE;
 		int shootDir = 1; 
-		int dir = (int) (Math.random()); //random number between 0-1
+		
+		int dir = (int) (Math.random() * 2); //random number between 0-1
 		if (dir == 0) {
 			//switch the direction
 			shootDir *= -1;

@@ -31,6 +31,7 @@ public class Guard extends GamePiece implements Moveable{
 			super.setLocation(super.getLocation()-1);
 			gameBoard[super.getLocation()-1] = this;
 		}
+		 
 	}
 
 	@Override

@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import gameEngine.Drawable;
 import gameEngine.GameEngine;
+import gameEngine.InteractionResult;
+import levelPieces.Archer;
 
 /* Class: TestInteractions
  * Purpose: used to test the interactions with each InteractingPiece with the player
@@ -25,10 +27,43 @@ public class TestInteractions {
 	public void testArcherInteraction() {
 		//Create a gameboard for the test
 		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
+		Archer archer = new Archer('A', "Archer", 0);
+		/*
+		 * The interaction for the archer involves randomization of the direction and 
+		 * range of the arrow the archer shoots so to test many iterations of interaction
+		 * will be run 
+		 */
+		
+		//Test for hits with the player 1-5 spaces (within random range) of the archer
+		for(int i = 1; i <= 5; i++) {
+			boolean hit = false;
+			//archer's range and direction is random, so must check for a hit many times
+			for(int j = 0; j < 100; j++) {
+				//note if over the 100 trials the player was hit at the range
+				if(archer.interact(gameBoard, i) == InteractionResult.HIT) {
+					hit = true;
+					break;
+				}
+			}
+			assert(hit);
+		}
+		//Test for hits with the player more than 5 spaces of the archer
+				for(int i = 6; i < GameEngine.BOARD_SIZE; i++) {
+					boolean hit = false;
+					//archer's range and direction is random, so must check for a hit many times
+					for(int j = 0; j < 100; j++) {
+						//note if over the 100 trials the player was hit at the range
+						if(archer.interact(gameBoard, i) == InteractionResult.HIT) {
+							hit = true;
+							break;
+						}
+					}
+					assert(!hit);
+				}
 	}
 	
 	/*
-	 * Tests that the Guard hits the player (interaction) only when player is on same 
+	 * Tests that the Guard kills the player (interaction) only when player is on same 
 	 * location or 1 spot adjacent 
 	 */
 	@Test
