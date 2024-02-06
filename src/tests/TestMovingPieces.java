@@ -9,8 +9,21 @@ import gameEngine.GameEngine;
 import levelPieces.Archer;
 import levelPieces.Door;
 
+/* Class: TestMovingPieces
+ * Purpose: used to test the movement of each MovingPiece
+ * Responsibilities: Uses JUnit unit testing to ensure that each MovingPiece is correctly
+ * moving within the bounds of the gameboard without going out of bounds or landing on an
+ * occupied space. This class test two different types of movement operations
+ * Authors: Jacey Jonson and Gavin Garzia
+ * Date: 2/6/24
+ * Collaborators: n/a
+ * Sources: n/a
+ */
 public class TestMovingPieces {
 
+	//only need two for the rubric, but the goblin piece moves as well
+	
+	
 	/* 
 	 * Tests random motion, used by the Archer
 	 */
@@ -71,7 +84,16 @@ public class TestMovingPieces {
 		assert(count0 >= 1);
 		assert(count10 >= 1);
 		assert (count20 >= 1);
-		
+	}
+	
+	/*
+	 * Tests motions for Guard piece 
+	 */
+	@Test
+	public void testGuard() {
+		//Create a gameboard for the test
+		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
 		
 	}
+
 }
