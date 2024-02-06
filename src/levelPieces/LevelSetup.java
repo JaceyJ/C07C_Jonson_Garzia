@@ -35,7 +35,7 @@ public class LevelSetup {
 		this.board = new Drawable[GameEngine.BOARD_SIZE];
 		this.movingPieces = new ArrayList<>();
 		this.interactingPieces = new ArrayList<>();
-		playerStartLoc = 0;
+		playerStartLoc = 2;
 	}
 	
 	public void createLevel(int levelNum) {

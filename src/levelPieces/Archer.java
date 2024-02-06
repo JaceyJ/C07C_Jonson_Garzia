@@ -49,8 +49,7 @@ public class Archer extends GamePiece implements Moveable {
 		while(true) {
 			//random number between 0-20
 			randomLoc = (int) (Math.random() * gameBoard.length);
-			if(gameBoard[randomLoc] == null) {
-				System.out.println("HERE");
+			if(gameBoard[randomLoc] == null &&  randomLoc != playerLocation) {
 				break;
 			}
 		}
