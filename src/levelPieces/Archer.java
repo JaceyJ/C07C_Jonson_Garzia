@@ -4,11 +4,22 @@ import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 import gameEngine.Moveable;
 
-public class Archer extends GamePiece implements Moveable {
+/* Class: Archer
+ * Purpose: used to create an archer gamepiece for the KerPlop Game
+ * Responsibilities: Interacts with the player by shooting in a random direction
+ * and within a random range. For each interaction either a hit occurs or no interaction
+ * occurs. Also moves randomly within the gameboard. This class overrides the interfaces
+ * and abstract classes it inherits
+ * Authors: Jacey Jonson and Gavin Garzia
+ * Date: 2/1/24
+ * Collaborators: n/a
+ * Sources: n/a
+ */
 
+public class Archer extends GamePiece implements Moveable {
+	
 	public Archer(char symbol, String label, int location) {
 		super(symbol, label, location);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

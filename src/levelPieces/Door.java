@@ -2,10 +2,14 @@ package levelPieces;
 
 import gameEngine.Drawable;
 
-/*
- * Class: Door
- * Purpose: draws a door on the game board. Door does nothing.
- * Authors Gavin Garzia and Jacey Jonson
+/* Class: Door
+ * Purpose: used to create a door gamepiece for the KerPlop Game
+ * Responsibilities: This gamepiece doesn't move or interact with the player -- it does
+ * nothing
+ * Authors: Jacey Jonson and Gavin Garzia
+ * Date: 2/1/24
+ * Collaborators: n/a
+ * Sources: n/a
  */
 public class Door implements Drawable{
 	private String label;

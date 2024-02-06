@@ -4,17 +4,25 @@ import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 import gameEngine.Moveable;
 
-/*
- * Class: Guard
- * Purpose: patrols near its starting square and will kill you if you are within one square of it
- * Authors Gavin Garzia and Jacey Jonson
+/* Class: Guard
+ * Purpose: used to create a guard gamepiece for the KerPlop Game
+ * Responsibilities: Interacts with the player by killing the player if the player is within
+ * one block of it. For each interaction either a kill occurs or no interaction
+ * occurs. Also patrols near its starting square within the gameboard. This class 
+ * overrides the interfaces and abstract classes it inherits
+ * Authors: Jacey Jonson and Gavin Garzia
+ * Date: 2/1/24
+ * Collaborators: n/a
+ * Sources: n/a
  */
 public class Guard extends GamePiece implements Moveable{
-	private boolean lastMoveLeft;
+	private int orignLoc;
+	private int dir;
 	
 	public Guard(int location) {
 		super('R', "Guard - (wants to kill you)", location);
-		lastMoveLeft = false;
+		orignLoc = location;
+		dir = -1;
 	}
 
 	
@@ -24,14 +32,16 @@ public class Guard extends GamePiece implements Moveable{
 	@Override
 	public void move(Drawable[] gameBoard, int playerLocation) {
 		gameBoard[super.getLocation()] = null;
-		if(lastMoveLeft && super.getLocation() < gameBoard.length && gameBoard[super.getLocation()+1] == null) {
-			super.setLocation(super.getLocation()+1);
-			gameBoard[super.getLocation()] = this;
-		}else if(!lastMoveLeft && super.getLocation() >= 0 && gameBoard[super.getLocation()-1] == null){
-			super.setLocation(super.getLocation()-1);
-			gameBoard[super.getLocation()-1] = this;
+		if(Math.abs(super.getLocation() - orignLoc) >= 2) {
+			//if the guard has patrolled 2 from his square, switch directiom
+			dir *= -1;
 		}
+tests
 		 
+		
+		super.setLocation(super.getLocation() + (1*dir));
+		gameBoard[super.getLocation()] = this;
+main
 	}
 
 	@Override

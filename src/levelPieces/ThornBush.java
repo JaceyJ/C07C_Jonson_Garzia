@@ -2,10 +2,16 @@ package levelPieces;
 
 import gameEngine.Drawable;
 import gameEngine.InteractionResult;
-/*
- * Class: Thornbush
- * Purpose: hits you if you are on the same square as it
- * Authors Gavin Garzia and Jacey Jonson
+
+/* Class: ThornBush
+ * Purpose: used to create an thornbush gamepiece for the KerPlop Game
+ * Responsibilities: Interacts with the player by hitting the player if they are on top of 
+ * it. This class overrides the interfaces and abstract classes 
+ * it inherits
+ * Authors: Jacey Jonson and Gavin Garzia
+ * Date: 2/1/24
+ * Collaborators: n/a
+ * Sources: n/a
  */
 public class ThornBush extends GamePiece{
 	public ThornBush(int location) {
