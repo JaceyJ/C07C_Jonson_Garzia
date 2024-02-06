@@ -8,6 +8,7 @@ import gameEngine.Drawable;
 import gameEngine.GameEngine;
 import levelPieces.Archer;
 import levelPieces.Door;
+import levelPieces.Guard;
 
 /* Class: TestMovingPieces
  * Purpose: used to test the movement of each MovingPiece
@@ -46,7 +47,7 @@ public class TestMovingPieces {
 			gameBoard[i] = new Door();
 		}
 		
-		//Place the sniper in location 10
+		//Place the archer in location 10
 		Archer archer = new Archer('A', "archer", 10);
 		gameBoard[10] = archer;
 		
@@ -93,6 +94,15 @@ public class TestMovingPieces {
 	public void testGuard() {
 		//Create a gameboard for the test
 		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
+		
+		
+		Guard guard = new Guard(10);
+		
+		for(int i = 0; i<50; i++) {
+			if(Math.abs(guard.getLocation() - 10) >= 2) {
+				fail("Guard should not move more than one space from original location");
+			}
+		}
 		
 	}
 
