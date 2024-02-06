@@ -36,12 +36,11 @@ public class Guard extends GamePiece implements Moveable{
 			//if the guard has patrolled 2 from his square, switch directiom
 			dir *= -1;
 		}
-tests
+
 		 
 		
 		super.setLocation(super.getLocation() + (1*dir));
 		gameBoard[super.getLocation()] = this;
-main
 	}
 
 	@Override

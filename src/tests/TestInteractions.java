@@ -1,11 +1,17 @@
 package tests;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import gameEngine.Drawable;
 import gameEngine.GameEngine;
 import gameEngine.InteractionResult;
 import levelPieces.Archer;
+import levelPieces.Guard;
+import levelPieces.MagicCarpet;
+import levelPieces.ThornBush;
+import levelPieces.Treasure;
 
 /* Class: TestInteractions
  * Purpose: used to test the interactions with each InteractingPiece with the player
@@ -70,6 +76,20 @@ public class TestInteractions {
 	public void testGuardInteraction() {
 		//Create a gameboard for the test
 		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
+		Guard guard = new Guard(10);
+		gameBoard[10] = guard;
+				
+		/* Need to check to make sure there is no interaction between player and the treasure
+		* except at spots 9, 10, and 11
+		* Using a for loop to test each spot to make sure the correct interaction occurs
+		*/
+		for(int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+			if(i == 9 || i == 10 || i == 11) {
+				assertEquals(guard.interact(gameBoard, i), InteractionResult.KILL);
+			} else {
+				assertEquals(guard.interact(gameBoard, i), InteractionResult.NONE);
+			}
+		}
 	}
 	
 	/* 
@@ -80,6 +100,20 @@ public class TestInteractions {
 	public void testMagicCarpet() {
 		//Create a gameboard for the test
 		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
+		MagicCarpet magicCarpet = new MagicCarpet('M', "Magic Carpet", 10);
+		gameBoard[10] = magicCarpet;
+				
+		/* Need to check to make sure there is no interaction between player and the treasure
+		* except at spots 9, 10, and 11
+		* Using a for loop to test each spot to make sure the correct interaction occurs
+		*/
+		for(int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+			if(i == 10) {
+				assertEquals(magicCarpet.interact(gameBoard, i), InteractionResult.ADVANCE);
+			} else {
+				assertEquals(magicCarpet.interact(gameBoard, i), InteractionResult.NONE);
+			}
+		}
 	}
 	
 	/*
@@ -90,6 +124,20 @@ public class TestInteractions {
 	public void testThornBush() {
 		//Create a gameboard for the test
 		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
+		ThornBush thornBush = new ThornBush(10);
+		gameBoard[10] = thornBush;
+				
+		/* Need to check to make sure there is no interaction between player and the treasure
+		* except at spot 10
+		* Using a for loop to test each spot to make sure the correct interaction occurs
+		*/
+		for(int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+			if(i == 10) {
+				assertEquals(thornBush.interact(gameBoard, i), InteractionResult.HIT);
+			} else {
+				assertEquals(thornBush.interact(gameBoard, i), InteractionResult.NONE);
+			}
+		}
 	}
 	
 	/*
@@ -100,6 +148,20 @@ public class TestInteractions {
 	public void testTreasure() {
 		//Create a gameboard for the test
 		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
+		Treasure treasure = new Treasure(10);
+		gameBoard[10] = treasure;
+		
+		/* Need to check to make sure there is no interaction between player and the treasure
+		 * except at spots 9, 10, and 11
+		 * Using a for loop to test each spot to make sure the correct interaction occurs
+		 */
+		for(int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+			if(i == 9 || i == 10 || i == 11) {
+				assertEquals(treasure.interact(gameBoard, i), InteractionResult.GET_POINT);
+			} else {
+				assertEquals(treasure.interact(gameBoard, i), InteractionResult.NONE);
+			}
+		}
 	}
 
 	
